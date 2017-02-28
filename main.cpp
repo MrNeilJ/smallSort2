@@ -30,6 +30,7 @@ int main()
 }
 */
 
+
 /**************************************************************
  *                      smallSort2
  *  Description: This function takes in 3 memory addresses
@@ -39,38 +40,28 @@ int main()
  **************************************************************/
 void smallSort2(int *ptrA, int *ptrB, int *ptrC)  // Must call by reference rather than by value
 {
-    // Temporary values used to hold the values stored in the pointers to facilitate the swapping
-    int a = *ptrA;
-    int b = *ptrB;
-    int c = *ptrC;
-
     // Holding container for moving values
     int temp;
 
     // Check to see if A > B, if so flip the values so the smallest is furthest left
-    if (a > b)
+    if (*ptrA > *ptrB)
     {
-        temp = a;
-        a = b;
-        b = temp;
+        temp = *ptrA;
+        *ptrA = *ptrB;
+        *ptrB = temp;
     }
     // Then compare if the updated A value is greater than C, if so switch values so smallest is left
-    if (a > c)
+    if (*ptrA > *ptrC)
     {
-        temp = a;
-        a = c;
-        c = temp;
+        temp = *ptrA;
+        *ptrA = *ptrC;
+        *ptrC = temp;
     }
     // Compare the remaining two values to see which is larger, flip according so smallest number is left
-    if (b > c)
+    if (*ptrB > *ptrC)
     {
-        temp = b;
-        b = c;
-        c = temp;
+        temp = *ptrB;
+        *ptrB = *ptrC;
+        *ptrC = temp;
     }
-
-    // Save the readjusted values into their respective spots
-    *ptrA = a;
-    *ptrB = b;
-    *ptrC = c;
 }
