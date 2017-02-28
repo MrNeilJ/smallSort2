@@ -1,16 +1,14 @@
-/* Write a void function named smallSort2 that takes as parameters the addresses of three int variables and sorts
- * the ints at those addresses into ascending order.  For example if the main method has:
+/**************************************************************
+ * Author: Neil Johnson
  *
- *  int a = 14;
- *  int b = -90;
- *  int c = 2;
- *  smallSort2(&a,&b, &c);
- *  cout << a << ", " << b << ", " << c << endl;
+ * Date: 2.27.2017
  *
- *  Then the output should be
- *
- *  -90, 2, 14
-*/
+ * Description: This file hosts a function known as smallSort2.
+ * The goal of this program is to allow the user to provide
+ * the function with 3 memory addresses and it will then
+ * modify the contents stored at those addresses so that they
+ * will appear in ascending order (smallest to largest).
+**************************************************************/
 
 // INCLUDED HEADERS
 #include <iostream>
@@ -20,6 +18,7 @@ using namespace std;
 // PROTOTYPES
 void smallSort2(int *ptrA, int*ptrB, int *ptrC);
 
+/*
 int main()
 {
     int a =  14;
@@ -29,9 +28,18 @@ int main()
     smallSort2(&a,&b, &c);
     cout << a << ", " << b << ", " << c << endl;
 }
+*/
 
+/**************************************************************
+ *                      smallSort2
+ *  Description: This function takes in 3 memory addresses
+ *  (&a, &b, &c) and modifies them so that the values
+ *  stored in these memory addresses appear in ascending
+ *  order (smallest to largest).
+ **************************************************************/
 void smallSort2(int *ptrA, int *ptrB, int *ptrC)  // Must call by reference rather than by value
 {
+    // Temporary values used to hold the values stored in the pointers to facilitate the swapping
     int a = *ptrA;
     int b = *ptrB;
     int c = *ptrC;
