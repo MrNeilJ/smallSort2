@@ -4,7 +4,7 @@
  *  int a = 14;
  *  int b = -90;
  *  int c = 2;
- *  smallSort2(&a, &b, &c);
+ *  smallSort2(&a,&b, &c);
  *  cout << a << ", " << b << ", " << c << endl;
  *
  *  Then the output should be
@@ -18,7 +18,7 @@
 using namespace std;
 
 // PROTOTYPES
-void smallSort2(int &a, int &b, int &c);
+void smallSort2(int *ptrA, int*ptrB, int *ptrC);
 
 int main()
 {
@@ -26,12 +26,16 @@ int main()
     int b = -90;
     int c =  2;
 
-    smallSort2(&a, &b, &c);
+    smallSort2(&a,&b, &c);
     cout << a << ", " << b << ", " << c << endl;
 }
 
-void smallSort2(int &a, int &b, int &c)  // Must call by reference rather than by value
+void smallSort2(int *ptrA, int *ptrB, int *ptrC)  // Must call by reference rather than by value
 {
+    int a = *ptrA;
+    int b = *ptrB;
+    int c = *ptrC;
+
     // Holding container for moving values
     int temp;
 
@@ -49,11 +53,16 @@ void smallSort2(int &a, int &b, int &c)  // Must call by reference rather than b
         a = c;
         c = temp;
     }
-    // Compare the remaining two values to see which is larger, flip acording so smallest number is left
+    // Compare the remaining two values to see which is larger, flip according so smallest number is left
     if (b > c)
     {
         temp = b;
         b = c;
         c = temp;
     }
+
+    // Save the readjusted values into their respective spots
+    *ptrA = a;
+    *ptrB = b;
+    *ptrC = c;
 }
