@@ -11,9 +11,9 @@
 **************************************************************/
 
 // INCLUDED HEADERS
-#include <iostream>
+// #include <iostream>
 
-using namespace std;
+// using namespace std;
 
 // PROTOTYPES
 void smallSort2(int *ptrA, int*ptrB, int *ptrC);
